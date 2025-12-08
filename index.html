@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF QA System</title>
+</head>
+<body>
+    <h1>PDF QA System</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="pdfs" multiple required>
+        <button type="submit">Ingest PDFs</button>
+    </form>
+
+    <form action="/ask" method="POST">
+        <input type="text" name="query" placeholder="Ask a question" required>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+        <h2>Answer:</h2>
+        <p>{{ answer }}</p>
+    {% endif %}
+
+    {% if snippets %}
+        <h3>Relevant Snippets:</h3>
+        <ul>
+            {% for snippet in snippets %}
+                <li>{{ snippet }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
