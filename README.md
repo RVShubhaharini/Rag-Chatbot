@@ -39,5 +39,3 @@ Technologies & Libraries
 - Document loaders / splitters  
 - LLM inference (Gemma / other models)  
 - Flask / web interface
-
-## 📁 Project Structure
